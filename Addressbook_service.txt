@@ -279,3 +279,55 @@ mysql> SELECT FirstName, City FROM addressbook ORDER BY FirstName;
 4 rows in set (0.00 sec)
 
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//UC9: Ability to identify each Address Book with name and type
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-> Here add the column in database after the lastname and the column name is type could Family, Friends, Profession, etc
+
+mysql> ALTER TABLE addressbook ADD Type VARCHAR(120) AFTER LastName;
+Query OK, 0 rows affected (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM addressbook;
++----+-----------+----------+------+-------------------------------------+-------------+-------------+--------+-------------+--------------------+
+| Id | FirstName | LastName | Type | Address                             | City        | State       | Zip    | PhoneNumber | Email              |
++----+-----------+----------+------+-------------------------------------+-------------+-------------+--------+-------------+--------------------+
+|  1 | Aniket    | Gavas    | NULL | A-07, Balaji Heights, Gokhale Road  | Mumbai      | Maharashtra | 400076 | 9842537524  | aniket98@gmail.com |
+|  2 | Sahil     | Sawant   | NULL | B-24, Beauty Heights, Ramabai Nagar | Mumbai      | Maharashtra | 400002 | 7834943244  | sahil488@gmail.com |
+|  3 | Rohit     | Salunkhe | NULL | 10, Ram Niwas, Pant Nagar           | Mumbai      | Maharashtra | 400046 | 8935417326  | rohit82@gmail.com  |
+|  5 | Rahul     | Patil    | NULL | A-47, Ranjana Heights, Sai Road     | Navi Mumbai | Maharashtra | 400054 | 9862834934  | rahul198@gmail.com |
++----+-----------+----------+------+-------------------------------------+-------------+-------------+--------+-------------+--------------------+
+4 rows in set (0.00 sec)
+
+mysql> UPDATE addressbook SET Type = 'Family' WHERE FirstName = 'Aniket';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE addressbook SET Type = 'Friend' WHERE FirstName = 'Sahil';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE addressbook SET Type = 'Developer' WHERE FirstName = 'Rohit';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> UPDATE addressbook SET Type = 'Army' WHERE FirstName = 'Rahul';
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT * FROM addressbook;
++----+-----------+----------+-----------+-------------------------------------+-------------+-------------+--------+-------------+--------------------+
+| Id | FirstName | LastName | Type      | Address                             | City        | State       | Zip    | PhoneNumber | Email              |
++----+-----------+----------+-----------+-------------------------------------+-------------+-------------+--------+-------------+--------------------+
+|  1 | Aniket    | Gavas    | Family    | A-07, Balaji Heights, Gokhale Road  | Mumbai      | Maharashtra | 400076 | 9842537524  | aniket98@gmail.com |
+|  2 | Sahil     | Sawant   | Friend    | B-24, Beauty Heights, Ramabai Nagar | Mumbai      | Maharashtra | 400002 | 7834943244  | sahil488@gmail.com |
+|  3 | Rohit     | Salunkhe | Developer | 10, Ram Niwas, Pant Nagar           | Mumbai      | Maharashtra | 400046 | 8935417326  | rohit82@gmail.com  |
+|  5 | Rahul     | Patil    | Army      | A-47, Ranjana Heights, Sai Road     | Navi Mumbai | Maharashtra | 400054 | 9862834934  | rahul198@gmail.com |
++----+-----------+----------+-----------+-------------------------------------+-------------+-------------+--------+-------------+--------------------+
+4 rows in set (0.00 sec)
+
+
+
+
+
