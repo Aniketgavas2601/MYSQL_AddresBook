@@ -261,5 +261,21 @@ mysql> SELECT State, COUNT(*) FROM addressbook GROUP BY State;
 +-------------+----------+
 1 row in set (0.00 sec)
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//UC8: Ability to retrieve entries sorted alphabetically by Person’s name for a given city
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-> Retrive the data Sorted Alphabetically ny person name
+ 
+mysql> SELECT FirstName, City FROM addressbook ORDER BY FirstName;
++-----------+-------------+
+| FirstName | City        |
++-----------+-------------+
+| Aniket    | Mumbai      |
+| Rahul     | Navi Mumbai |
+| Rohit     | Mumbai      |
+| Sahil     | Mumbai      |
++-----------+-------------+
+4 rows in set (0.00 sec)
 
 
