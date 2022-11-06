@@ -192,3 +192,48 @@ mysql> select * from addressbook;
 |  3 | Rohit     | Salunkhe | 10, Ram Niwas, Pant Nagar           | Mumbai | Maharashtra | 400046 | 8935417326  | rohit82@gmail.com  |
 +----+-----------+----------+-------------------------------------+--------+-------------+--------+-------------+--------------------+
 3 rows in set (0.00 sec)
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//UC6: Ability to Retrive the data using person belonging to city or state name
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+mysql> INSERT INTO addressbook ( FirstName, LastName, Address, City, State, Zip, PhoneNumber, Email ) VALUES
+    ->  ('Rahul', 'Patil', 'A-47, Ranjana Heights, Sai Road', 'Navi Mumbai', 'Maharashtra', 400054, '9862834934', 'rahul198@gmail.com' );
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from addressbook;
++----+-----------+----------+-------------------------------------+-------------+-------------+--------+-------------+--------------------+
+| Id | FirstName | LastName | Address                             | City        | State       | Zip    | PhoneNumber | Email              |
++----+-----------+----------+-------------------------------------+-------------+-------------+--------+-------------+--------------------+
+|  1 | Aniket    | Gavas    | A-07, Balaji Heights, Gokhale Road  | Mumbai      | Maharashtra | 400076 | 9842537524  | aniket98@gmail.com |
+|  2 | Sahil     | Sawant   | B-24, Beauty Heights, Ramabai Nagar | Mumbai      | Maharashtra | 400002 | 7834943244  | sahil488@gmail.com |
+|  3 | Rohit     | Salunkhe | 10, Ram Niwas, Pant Nagar           | Mumbai      | Maharashtra | 400046 | 8935417326  | rohit82@gmail.com  |
+|  5 | Rahul     | Patil    | A-47, Ranjana Heights, Sai Road     | Navi Mumbai | Maharashtra | 400054 | 9862834934  | rahul198@gmail.com |
++----+-----------+----------+-------------------------------------+-------------+-------------+--------+-------------+--------------------+
+4 rows in set (0.00 sec)
+
+-> Retrive the data using person belonging to city name
+
+mysql> select * from addressbook where City = 'Navi Mumbai';
++----+-----------+----------+---------------------------------+-------------+-------------+--------+-------------+--------------------+
+| Id | FirstName | LastName | Address                         | City        | State       | Zip    | PhoneNumber | Email              |
++----+-----------+----------+---------------------------------+-------------+-------------+--------+-------------+--------------------+
+|  5 | Rahul     | Patil    | A-47, Ranjana Heights, Sai Road | Navi Mumbai | Maharashtra | 400054 | 9862834934  | rahul198@gmail.com |
++----+-----------+----------+---------------------------------+-------------+-------------+--------+-------------+--------------------+
+1 row in set (0.00 sec)
+
+
+-> Retrive the data using person belonging to state name
+
+mysql> select * from addressbook where State = 'Maharashtra';
++----+-----------+----------+-------------------------------------+-------------+-------------+--------+-------------+--------------------+
+| Id | FirstName | LastName | Address                             | City        | State       | Zip    | PhoneNumber | Email              |
++----+-----------+----------+-------------------------------------+-------------+-------------+--------+-------------+--------------------+
+|  1 | Aniket    | Gavas    | A-07, Balaji Heights, Gokhale Road  | Mumbai      | Maharashtra | 400076 | 9842537524  | aniket98@gmail.com |
+|  2 | Sahil     | Sawant   | B-24, Beauty Heights, Ramabai Nagar | Mumbai      | Maharashtra | 400002 | 7834943244  | sahil488@gmail.com |
+|  3 | Rohit     | Salunkhe | 10, Ram Niwas, Pant Nagar           | Mumbai      | Maharashtra | 400046 | 8935417326  | rohit82@gmail.com  |
+|  5 | Rahul     | Patil    | A-47, Ranjana Heights, Sai Road     | Navi Mumbai | Maharashtra | 400054 | 9862834934  | rahul198@gmail.com |
++----+-----------+----------+-------------------------------------+-------------+-------------+--------+-------------+--------------------+
+4 rows in set (0.00 sec)
+
+
