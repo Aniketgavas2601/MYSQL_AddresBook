@@ -92,3 +92,29 @@ mysql> DESCRIBE addressbook;
 +--------------+--------------+------+-----+---------+----------------+
 9 rows in set (0.01 sec)
 
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//UC3: Ability to insert new Contacts to Address Book
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-> INSERT INTO addresbook Query to insert data of peoples into the addressbook table
+
+mysql> INSERT INTO addressbook ( FirstName, LastName, Address, City, State, Zip, PhoneNumber, Email ) VALUES
+    ->  ('Aniket', 'Gavas', 'A-07, Balaji Heights, Gokhale Road', 'Mumbai', 'Maharashtra', 400076, '9842537524', 'aniket98@gmail.com' ),				# 1st person details
+    ->  ('Sahil', 'Sawant', 'B-24, Beauty Heights, Ramabai Nagar', 'Mumbai', 'Maharashtra', 400002, '7834943244', 'sahil488@gmail.com' ),				# 2nd person details	
+    ->  ('Pratik', 'Salunkhe', '10, Ram Niwas, Pant Nagar', 'Mumbai', 'Maharashtra', 400046, '8935417326', 'pratiksalunkhe78@gmail.com' ),				# 3rd person details
+    ->  ('Abhishek', 'Raut', '6, Sitaram Chawl, Fadke Road', 'Mumbai', 'Maharashtra', 400048, '8253647523', 'abhishek45@gmail.com' );					# 4th person details
+Query OK, 4 rows affected (0.01 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+-> SELECT * FROM addressbook query to retrive all the data from addressbook table.
+
+mysql> SELECT * FROM addressbook;
++----+-----------+----------+-------------------------------------+--------+-------------+--------+-------------+----------------------------+
+| Id | FirstName | LastName | Address                             | City   | State       | Zip    | PhoneNumber | Email                      |
++----+-----------+----------+-------------------------------------+--------+-------------+--------+-------------+----------------------------+
+|  1 | Aniket    | Gavas    | A-07, Balaji Heights, Gokhale Road  | Mumbai | Maharashtra | 400076 | 9842537524  | aniket98@gmail.com         |
+|  2 | Sahil     | Sawant   | B-24, Beauty Heights, Ramabai Nagar | Mumbai | Maharashtra | 400002 | 7834943244  | sahil488@gmail.com         |
+|  3 | Pratik    | Salunkhe | 10, Ram Niwas, Pant Nagar           | Mumbai | Maharashtra | 400046 | 8935417326  | pratiksalunkhe78@gmail.com |
+|  4 | Abhishek  | Raut     | 6, Sitaram Chawl, Fadke Road        | Mumbai | Maharashtra | 400048 | 8253647523  | abhishek45@gmail.com       |
++----+-----------+----------+-------------------------------------+--------+-------------+--------+-------------+----------------------------+
+4 rows in set (0.00 sec)
